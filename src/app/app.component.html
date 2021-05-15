@@ -6,7 +6,8 @@
   <input type="checkbox">
   <label>Female</label>
 
-  <input type="text" placeholder="Whom you are looking for..">
+  <input type="text" [(ngModel)]="searchText"
+           class="form-control" placeholder="Whom you are looking for..">
 
   <table>
 
@@ -20,7 +21,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of candidates">
+      <tr *ngFor="let c of candidates | id:searchText ">
         <td>{{c.id}}</td>
         <td>{{c.first_name}}</td>
         <td>{{c.last_name}}</td>
