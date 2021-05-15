@@ -1,4 +1,49 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<form>
+  <input type="checkbox" (change)="femaleOnly($event)">
+  <label>Male</label>
+
+  <input type="checkbox">
+  <label>Female</label>
+
+  <input type="text" placeholder="Whom you are looking for..">
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>#id </th>
+        <th>First Name </th>
+        <th>Last Name</th>
+        <th>Email </th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of candidates">
+        <td>{{c.id}}</td>
+        <td>{{c.first_name}}</td>
+        <td>{{c.last_name}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.gender}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</form>
+<form>
+  <label>Add New Candidate</label>
+  <div class="row">
+    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Last Name">
+  </div>
+  <div class="row">
+    <input type="text" placeholder="Email">
+
+  </div>
+  <div class="row">
+    <input type="checkbox"><label>Female</label>
+    <input type="checkbox"><label>Male</label>
+    <button>Add</button>
+  </div>
+</form>
